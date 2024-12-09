@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/models/destination_model.dart';
+import 'package:travel_app/screens/destination_screen.dart';
 
 class DestinationCarousel extends StatelessWidget {
   @override
@@ -44,14 +45,14 @@ class DestinationCarousel extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
               return GestureDetector(
-                // onTap: () => Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (_) => DestinationScreen(
-                //       destination: destination,
-                //     ),
-                //   ),
-                // ),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => DestinationScreen(
+                      destination: destination,
+                    ),
+                  ),
+                ),
                 child: Container(
                   margin: EdgeInsets.all(10.0),
                   width: 210.0,
